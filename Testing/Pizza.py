@@ -9,6 +9,7 @@ arcade.set_background_color((84, 72, 3))
 arcade.start_render()
 
 # code for plate, had to put it first or else it would overlap
+arcade.draw_circle_filled(500, 400, 420, arcade.csscolor.GRAY)
 arcade.draw_circle_filled(500, 400, 400, arcade.csscolor.WHITE)
 
 # Pizza triangle foundation, pretty straightforward.
@@ -26,6 +27,9 @@ arcade.draw_circle_filled(600, 430, 40, arcade.csscolor.RED)
 # Mushroom slice, cosists of an arc and a rectangle, much like the code for one of the trees
 arcade.draw_arc_filled(700, 330, 80, 120, (133, 122, 81), 0, 180)
 arcade.draw_rectangle_filled(700, 320, 20, 40, (133, 122, 81))
+
+# green pepper
+arcade.draw_rectangle_filled(560, 360, 50, 40, arcade.csscolor.GREEN)
 
 # Fun text :P
 arcade.draw_text("Pizza plate for only pizza", 400, 700, arcade.csscolor.BLACK)

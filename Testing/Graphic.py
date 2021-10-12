@@ -92,6 +92,7 @@ arcade.draw_rectangle_filled(450, 350, 10, 75, (168, 171, 82), 170)
 arcade.draw_circle_filled(445, 380, 15, (230, 225, 195))
 draw_flower(550, 335)
 
+# godlight
 arcade.draw_rectangle_filled(500, 600, 205, 725, (253, 255, 143, 40))
 
 arcade.finish_render()

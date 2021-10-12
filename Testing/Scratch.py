@@ -7,6 +7,7 @@ arcade.set_background_color(arcade.csscolor.GREY)
 # Color variables
 GOLD = 199, 164, 70
 MASTER_SWORD_PURPLE = 20, 17, 99
+BLADE_GRAY = 216, 223, 235
 
 
 def master_sword(x, y):
@@ -16,6 +17,7 @@ def master_sword(x, y):
     arcade.draw_rectangle_filled(x, y + 117.5, 49, 35, (216, 223, 235))
     arcade.draw_triangle_filled(x, y + 155, x + 25, y + 135, x - 25, y + 135, (216, 223, 235))
     arcade.draw_rectangle_filled(x, y + 175, 30, 100, (216, 223, 235))
+    arcade.draw_triangle_filled(x, y - 133, x - 17.7, y - 100, x + 17.7, y - 100, BLADE_GRAY)
 
     # Blade-hilt intersection
     arcade.draw_rectangle_filled(x, y + 200, 30, 60, (20, 17, 99))

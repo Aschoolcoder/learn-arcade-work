@@ -67,6 +67,7 @@ arcade.draw_rectangle_filled(540, 570, 30, 30, arcade.csscolor.GREY, 285)
 # beginning of handle
 arcade.draw_arc_filled(485, 620, 13, 8, arcade.csscolor.GREY, 0, 150)
 arcade.draw_arc_filled(515, 620, 13, 8, arcade.csscolor.GREY, 30, 180)
+arcade.draw_rectangle_filled(500, 630, 17, 3, MASTER_SWORD_PURPLE)
 
 # handle
 arcade.draw_rectangle_filled(500, 660, 13, 65, MASTER_SWORD_PURPLE)
@@ -90,6 +91,8 @@ arcade.draw_rectangle_filled(490, 519.5, 7, 3, (201, 201, 201))
 arcade.draw_rectangle_filled(450, 350, 10, 75, (168, 171, 82), 170)
 arcade.draw_circle_filled(445, 380, 15, (230, 225, 195))
 draw_flower(550, 335)
+
+arcade.draw_rectangle_filled(500, 600, 205, 725, (253, 255, 143, 40))
 
 arcade.finish_render()
 

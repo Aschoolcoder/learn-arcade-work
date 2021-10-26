@@ -1,30 +1,13 @@
 import arcade
 
+arcade.open_window(1000, 800, 'master sword')
+
+arcade.set_background_color(arcade.csscolor.GREY)
+
 # Color variables
 GOLD = 199, 164, 70
 MASTER_SWORD_PURPLE = 20, 17, 99
 BLADE_GRAY = 216, 223, 235
-
-
-# Flower function
-def draw_flower(x, y):
-    """draws a flower
-    idk how to get tilt angle"""
-    arcade.draw_rectangle_filled(x, y, 10, 75, (168, 171, 82))
-    arcade.draw_circle_filled(x, y + 40, 15, (230, 225, 195))
-    # Flowers
-    arcade.draw_rectangle_filled(450, 350, 10, 75, (168, 171, 82), 170)
-    arcade.draw_circle_filled(445, 380, 15, (230, 225, 195))
-    draw_flower(550, 335)
-    # god light
-    arcade.draw_rectangle_filled(500, 600, 205, 725, (253, 255, 143, 40))
-
-
-def pedestal():
-    # pedestal
-    arcade.draw_rectangle_filled(500, 300, 200, 120, (115, 138, 105))
-    arcade.draw_rectangle_outline(500, 300, 200, 120, (93, 99, 24), 5)
-    arcade.draw_rectangle_filled(500, 300, 50, 30, (76, 87, 68))
 
 
 def master_sword(x, y):
@@ -90,23 +73,12 @@ def master_sword(x, y):
     arcade.draw_rectangle_filled(x - 10, y + 119.5, 7, 3, (201, 201, 201))
 
 
-def on_draw(delta_time):
-    arcade.start_render()
-    pedestal()
-    master_sword(500, on_draw.master_sword_y)
-    on_draw.master_sword_y += 1
-    if on_draw.master_sword_y == 550:
-        arcade.finish_render()
+arcade.start_render()
 
+master_sword(150, 300)
+master_sword(400, 300)
+master_sword(800, 300)
 
-on_draw.master_sword_y = 400
+arcade.finish_render()
 
-
-def main():
-    arcade.open_window(1000, 800, 'master sword')
-    arcade.set_background_color(arcade.csscolor.GREY)
-    arcade.schedule(on_draw, 1 / 60)
-    arcade.run()
-
-
-main()
+arcade.run()

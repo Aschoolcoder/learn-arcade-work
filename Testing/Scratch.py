@@ -11,7 +11,7 @@ BLADE_GRAY = 216, 223, 235
 
 
 def master_sword(x, y):
-    # Blade
+    """this function draws a master sword, input x and y to move it"""
     arcade.draw_rectangle_filled(x, y, 35, 200, (216, 223, 235))
     arcade.draw_triangle_filled(x, y + 80, x + 25, y + 100, x - 25, y + 100, (216, 223, 235))
     arcade.draw_rectangle_filled(x, y + 117.5, 49, 35, (216, 223, 235))
@@ -73,32 +73,33 @@ def master_sword(x, y):
     arcade.draw_rectangle_filled(x - 10, y + 119.5, 7, 3, (201, 201, 201))
 
 
-def normal_screen(delta_time):
-    arcade.start_render()
+def on_draw(delta_time):
+    arcade.draw_rectangle_filled(500, 400, 100000, 100000000, arcade.csscolor.GREY)
 
     master_sword(500, 400)
 
 
-def on_draw(delta_time):
+def phase_2(delta_time, x, y):
     arcade.draw_rectangle_filled(500, 400, 100000, 100000000, arcade.csscolor.GREY)
 
-    master_sword(500, 430)
-
-
-def phase_2(delta_time):
-    arcade.draw_rectangle_filled(500, 400, 100000, 100000000, arcade.csscolor.GREY)
-
-    master_sword(500, 450)
-
+    master_sword(x, y)
     arcade.finish_render()
 
 
-def main():
-    arcade.schedule(normal_screen, 0 / 1)
-    arcade.schedule(on_draw, 2 / 1)
-    arcade.schedule(phase_2, 3 / 1)
+def end(delta_time):
+    """end render"""
+    arcade.finish_render()
 
 
-main()
+
+on_draw(0 / 1)
+
+phase_2(8 / 1, 500, 500)
+
+
+
+
+
+
 
 arcade.run()

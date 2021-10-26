@@ -90,16 +90,30 @@ def master_sword(x, y):
     arcade.draw_rectangle_filled(x - 10, y + 119.5, 7, 3, (201, 201, 201))
 
 
+def blue_light(a, b):
+    arcade.draw_rectangle_filled(500, 350, 50, 100, (28, 121, 252, 30 + a))
+    arcade.draw_rectangle_filled(500, 410, 50, 30, (28, 121, 252, b))
+
+
 def on_draw(delta_time):
     arcade.start_render()
     pedestal()
     master_sword(500, on_draw.master_sword_y)
+    blue_light(on_draw.blue_light_a, on_draw.blue_light_b)
     on_draw.master_sword_y += 1
+    on_draw.blue_light_a += 1
+    on_draw.blue_light_b += 1
     if on_draw.master_sword_y == 550:
         arcade.finish_render()
+    if on_draw.blue_light_a == 50:
+        on_draw.blue_light_a -= 1
+    if on_draw.blue_light_b == 30:
+        on_draw.blue_light_b -= 1
 
 
 on_draw.master_sword_y = 400
+on_draw.blue_light_b = 0
+on_draw.blue_light_a = 0
 
 
 def main():

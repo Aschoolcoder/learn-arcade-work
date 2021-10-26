@@ -1,8 +1,9 @@
-def square(x):
-    square = x * x
-    return square
+import arcade
 
+arcade.open_window(1000, 800, 'master sword')
 
-result = square(10)
+arcade.set_background_color(arcade.csscolor.GREY)
 
-print(result)
+arcade.start_render()
+
+arcade.draw_triangle_filled()

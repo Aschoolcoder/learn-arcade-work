@@ -30,7 +30,9 @@
 #    for column in range(10):
 #       print(column, end="  ")
 
-for row in range(10):
+"""for row in range(10):
     print(" ")
     for column in range(10):
-        print(row, end="  ")
+        print(row, end="  ")"""
+
+

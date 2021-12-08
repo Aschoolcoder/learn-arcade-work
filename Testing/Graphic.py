@@ -5,7 +5,6 @@ GOLD = 199, 164, 70
 MASTER_SWORD_PURPLE = 20, 17, 99
 BLADE_GRAY = 216, 223, 235
 
-
 # Flower function
 def draw_flower(x, y):
     """draws a flower
@@ -95,31 +94,25 @@ def blue_light(a, b):
     arcade.draw_rectangle_filled(500, 410, 50, 30, (28, 121, 252, b))
 
 
-def on_draw(delta_time):
+def on_draw():
     arcade.start_render()
     pedestal()
-    master_sword(500, on_draw.master_sword_y)
-    blue_light(on_draw.blue_light_a, on_draw.blue_light_b)
-    on_draw.master_sword_y += 1
-    on_draw.blue_light_a += 1
-    on_draw.blue_light_b += 1
-    if on_draw.master_sword_y == 550:
-        arcade.finish_render()
-    if on_draw.blue_light_a == 50:
-        on_draw.blue_light_a -= 1
-    if on_draw.blue_light_b == 30:
-        on_draw.blue_light_b -= 1
+    master_sword_y = 400
+    blue_light_b = 0
+    blue_light_a = 0
+    while master_sword_y <= 700:
+        master_sword_y += 5
+        blue_light_a += 1
+        blue_light_b += 1
+        master_sword(400, master_sword_y)
 
 
-on_draw.master_sword_y = 400
-on_draw.blue_light_b = 0
-on_draw.blue_light_a = 0
 
 
 def main():
     arcade.open_window(1000, 800, 'master sword')
     arcade.set_background_color(arcade.csscolor.GREY)
-    arcade.schedule(on_draw, 1 / 60)
+    on_draw()
     arcade.run()
 
 
